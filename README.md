@@ -18,5 +18,5 @@ The project involves the creation of an e-learning website using HTML, CSS, and 
 - CSS
 - JavaScript
 
-- Thank you for visiting! 
+# Thank you for visiting! 
 Give a ⭐ if you like this project!
