@@ -1,0 +1,533 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Build Your Bright Career</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Topbar */
+        .topbar {
+            background-color: #0c0c0c;
+            color: #ffffff;
+            padding: 10px 0;
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .topbar-right a {
+            color: #bf6fb0;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #f1f9f6;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #743364;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #743364;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Search bar */
+        .search-bar input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 2px solid #cb85b1;
+            outline: none;
+            width: 200px;
+        }
+
+        .actions a {
+            background-color: #fff;
+            border: 2px solid #cb85b1;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-left: 10px;
+            text-decoration: none;
+            color: #622e59;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #e8f5e9;
+            padding: 60px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h3 {
+            font-size: 1.4rem;
+            color: #920d6a;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            color: #000000;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-start {
+            background-color: #5e0344;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        .btn-start:hover {
+            background-color: #4aab5d;
+        }
+
+        /* Girl Image */
+        .hero-image {
+            width: 400px;
+            height: auto;
+            display: block;
+            border-radius: 50%;
+        }
+
+        /* All Courses Section */
+        .all-courses {
+            padding: 60px 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .all-courses h2 {
+            font-size: 2rem;
+            color: #622e59;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .courses-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .course-box {
+            background-color: #fff;
+            border: 2px solid #cb85b1;
+            border-radius: 15px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .course-box img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .course-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-box h3 {
+            font-size: 1.5rem;
+            color: #622e59;
+        }
+
+        .course-box p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 90px 0;
+            background-image: url("bgabout.jpg"); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .about-us h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .about-us p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .about-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .benefit-box {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-box h4 {
+            font-size: 1.2rem;
+            color: #e8f5e9;
+            margin-bottom: 10px;
+        }
+
+        .student-feedback {
+            padding: 40px 0;
+            background-color: #f1f9f6;
+            text-align: center;
+        }
+
+        .student-feedback h3 {
+            font-size: 1.5rem;
+            color: #622e59;
+            margin-bottom: 20px;
+        }
+
+        .feedback {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .feedback-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-box p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            color: #622e59;
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-form {
+            width: 300px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid #cb85b1;
+        }
+
+        .contact-form button {
+            background-color: #622e59;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-details {
+            width: 300px;
+        }
+
+        .contact-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .contact-details th,
+        .contact-details td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact-details th {
+            background-color: #622e59;
+            color: white;
+        }
+        /* Footer */
+        .footer {
+            background-color: #5e0344;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <span>Support: support@edulearn.com</span>
+            </div>
+            <div class="topbar-right">
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="logo">EduLearn</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#all-courses">Courses</a></li>
+                    <li><a href="#about-us">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Courses">
+            </div>
+            <div class="actions">
+                <a href="#">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h3>Your Future Starts Here</h3>
+                <h1>Learn Today <br> Lead Tomorrow</h1>
+                <p>Build your skills with EduLearn, where we make education accessible, fun, and tailored for your
+                    success.</p>
+                <button class="btn-start">Get Started Now</button>
+            </div>
+            <img class="hero-image" src="stu_ele1.png"
+                alt="Girl studying">
+        </div>
+    </section>
+
+    <!-- All Courses Section -->
+    <section id="all-courses" class="all-courses">
+        <h2>All Courses</h2>
+        <div class="courses-grid">
+            <div class="course-box">
+                <img src="web_course.jpeg" alt="course1">
+                <h3>Web Development</h3>
+                <p>Learn the latest trends and techniques in web design and development.</p>
+            </div>
+            <div class="course-box">
+                <img src="graphics_course.jpeg" alt="course2">
+                <h3>Graphic Design</h3>
+                <p>Master the art of graphic design using industry-standard tools and techniques.</p>
+            </div>
+            <div class="course-box">
+                <img src="data_course.jpeg" alt="course3">
+                <h3>Data Science</h3>
+                <p>Unlock the power of data with our comprehensive data science courses.</p>
+            </div>
+            <!-- Added UX/UI Design Course -->
+            <div class="course-box">
+                <img src="uxui_course.jpeg" alt="course4">
+                <h3>UX/UI Design</h3>
+                <p>Design intuitive user experiences and user interfaces that stand out in the digital world.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>At EduLearn, we believe in providing quality education that is accessible to all. With a variety of courses
+            that cater to different fields, we help you develop the skills needed to excel in today's competitive world.
+        </p>
+
+        <div class="about-benefits">
+            <div class="benefit-box">
+                <h4>Experienced Teachers</h4>
+                <p>Learn from industry experts with years of practical knowledge and experience.</p>
+            </div>
+            <div class="benefit-box">
+                <h4>Practical Skills</h4>
+                <p>Get hands-on training and develop practical skills that set you apart.</p>
+            </div>
+            <div class="benefit-box">
+                <h4>Flexible Learning</h4>
+                <p>Study at your own pace, with courses available online and offline.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Feedback -->
+    <section class="student-feedback">
+        <h3>What Our Students Say</h3>
+        <div class="feedback">
+            <div class="feedback-box">
+                <p>"EduLearn changed my life! The teachers are amazing, and the skills I learned helped me land my dream
+                    job." – John D.</p>
+            </div>
+            <div class="feedback-box">
+                <p>"I was able to complete my data science course while working full-time. The flexibility EduLearn
+                    offers is unmatched!" – Maria S.</p>
+            </div>
+            <div class="feedback-box">
+                <p>"The courses are very well-structured and easy to follow. Highly recommend EduLearn!" – Alex P.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message" rows="5"></textarea>
+                <button>Send Message</button>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <table>
+                    <tr>
+                        <th>Contact Info</th>
+                    </tr>
+                    <tr>
+                        <td>Email: support@edulearn.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone: +123 456 7890</td>
+                    </tr>
+                    <tr>
+                        <td>Address: 123 Education St, Learnville</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 EduLearn. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
